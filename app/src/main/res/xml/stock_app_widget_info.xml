@@ -6,5 +6,5 @@
     android:minWidth="100dp"
     android:targetCellWidth="2"
     android:targetCellHeight="1"
-    android:previewImage="@drawable/glance_example_preview">
+    android:previewImage="@mipmap/ic_launcher">
 </appwidget-provider>

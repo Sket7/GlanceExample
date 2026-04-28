@@ -6,10 +6,10 @@ import kotlin.random.Random
 
 object PriceDataRepo {
     var ticker = "GOOGL"
-    private var previousPrice = 0f
+    private var previousPrice = 25.0f
     var change = 0
 
-    private val _currentPrice = MutableStateFlow(0f)
+    private val _currentPrice = MutableStateFlow(25.5f)
     val currentPrice: StateFlow<Float> get() = _currentPrice
 
     fun update() {
@@ -17,7 +17,7 @@ object PriceDataRepo {
         _currentPrice.value = Random.nextInt(20, 35) + Random.nextFloat()
 
         if (previousPrice > 0f) {
-            change = ((currentPrice.value - previousPrice) / previousPrice * 100).toInt()
+            change = (((_currentPrice.value - previousPrice) / previousPrice) * 100).toInt()
         } else {
             change = 0
         }
